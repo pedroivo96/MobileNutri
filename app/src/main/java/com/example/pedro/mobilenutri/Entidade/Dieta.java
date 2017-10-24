@@ -1,33 +1,35 @@
 package com.example.pedro.mobilenutri.Entidade;
 
+import java.io.Serializable;
+
 /**
  * Created by pedro on 22/10/17.
  */
 
-public class Dieta {
+public class Dieta implements Serializable {
 
-    private int id;
+    private long idDieta;
     private String nomeDieta;
     private int quantidadeMaximaCalorias;
     private int quantidadeMaximaSodio;
     private int quantidadeMaximaAcucar;
 
-    public Dieta(int id, String nomeDieta , int quantidadeMaximaCalorias , int quantidadeMaximaSodio , int quantidadeMaximaAcucar){
+    /*public Dieta(int id, String nomeDieta , int quantidadeMaximaCalorias , int quantidadeMaximaSodio , int quantidadeMaximaAcucar){
 
-        this.id = id;
+        this.idDieta = id;
         this.nomeDieta = nomeDieta;
         this.quantidadeMaximaCalorias = quantidadeMaximaCalorias;
         this.quantidadeMaximaSodio = quantidadeMaximaSodio;
         this.quantidadeMaximaAcucar = quantidadeMaximaAcucar;
 
+    }*/
+
+    public long getId() {
+        return idDieta;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setId(long id) {
+        this.idDieta = id;
     }
 
     public String getNomeDieta() {
