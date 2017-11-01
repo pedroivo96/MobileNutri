@@ -1,6 +1,7 @@
 package com.example.pedro.mobilenutri.Visao;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import com.example.pedro.mobilenutri.R;
  */
 public class PesquisarAlimentoFragment extends Fragment {
 
+    private Context context;
 
     public PesquisarAlimentoFragment() {
         // Required empty public constructor
@@ -27,4 +29,14 @@ public class PesquisarAlimentoFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_pesquisar_alimento, container, false);
     }
 
+    @Override
+    public void onAttach(Context context) {
+        this.context = context;
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }
 }

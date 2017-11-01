@@ -16,7 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Visao.MenuActivity"></activity>
+        <activity android:name=".Visao.MenuActivity" />
+        <activity android:name=".Visao.DietaActivity" />
+        <activity android:name=".Visao.RefeicoesActivity" />
+        <activity android:name=".Visao.AdicionarRefeicaoActivity" />
+        <activity android:name=".Visao.RefeicaoActivity"></activity>
     </application>
 
 </manifest>

@@ -10,9 +10,9 @@ public class Dieta implements Serializable {
 
     private long idDieta;
     private String nomeDieta;
-    private int quantidadeMaximaCalorias;
-    private int quantidadeMaximaSodio;
-    private int quantidadeMaximaAcucar;
+    private float quantidadeMaximaCalorias;
+    private float quantidadeMaximaSodio;
+    private float quantidadeMaximaAcucar;
 
     /*public Dieta(int id, String nomeDieta , int quantidadeMaximaCalorias , int quantidadeMaximaSodio , int quantidadeMaximaAcucar){
 
@@ -40,27 +40,27 @@ public class Dieta implements Serializable {
         this.nomeDieta = nomeDieta;
     }
 
-    public int getQuantidadeMaximaCalorias() {
+    public float getQuantidadeMaximaCalorias() {
         return quantidadeMaximaCalorias;
     }
 
-    public void setQuantidadeMaximaCalorias(int quantidadeMaximaCalorias) {
+    public void setQuantidadeMaximaCalorias(float quantidadeMaximaCalorias) {
         this.quantidadeMaximaCalorias = quantidadeMaximaCalorias;
     }
 
-    public int getQuantidadeMaximaSodio() {
+    public float getQuantidadeMaximaSodio() {
         return quantidadeMaximaSodio;
     }
 
-    public void setQuantidadeMaximaSodio(int quantidadeMaximaSodio) {
+    public void setQuantidadeMaximaSodio(float quantidadeMaximaSodio) {
         this.quantidadeMaximaSodio = quantidadeMaximaSodio;
     }
 
-    public int getQuantidadeMaximaAcucar() {
+    public float getQuantidadeMaximaAcucar() {
         return quantidadeMaximaAcucar;
     }
 
-    public void setQuantidadeMaximaAcucar(int quantidadeMaximaAcucar) {
+    public void setQuantidadeMaximaAcucar(float quantidadeMaximaAcucar) {
         this.quantidadeMaximaAcucar = quantidadeMaximaAcucar;
     }
 }

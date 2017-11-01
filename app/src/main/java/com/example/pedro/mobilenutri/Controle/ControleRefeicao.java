@@ -1,5 +1,7 @@
 package com.example.pedro.mobilenutri.Controle;
 
+import android.content.Context;
+
 import com.example.pedro.mobilenutri.Entidade.Refeicao;
 import com.example.pedro.mobilenutri.Repositorio.RepositorioRefeicao;
 
@@ -14,27 +16,34 @@ public class ControleRefeicao {
 
     private RepositorioRefeicao repositorioRefeicao;
 
-    public ControleRefeicao(){
-        this.repositorioRefeicao = new RepositorioRefeicao();
+    public ControleRefeicao(Context context){
+
+        this.repositorioRefeicao = new RepositorioRefeicao(context);
     }
 
-    public Refeicao pesquisarRefeicaoPorId(int id){
+    public Refeicao pesquisarRefeicaoPorId(long id){
 
-        Refeicao refeicao = null;
+        Refeicao refeicao;
+
+        refeicao = repositorioRefeicao.pesquisarRefeicao(id);
 
         return  refeicao;
     }
 
-    public boolean inserirRefeicao(Refeicao refeicao){
+    public long inserirRefeicao(Refeicao refeicao){
 
-        boolean resultadoInsercao = false;
+        long idRefeicao;
 
-        return resultadoInsercao;
+        idRefeicao = repositorioRefeicao.inserirRefeicao(refeicao);
+
+        return idRefeicao;
     }
 
-    public ArrayList<Refeicao> pesquisarRefeicoesDeUmaDieta(int idDieta){
+    public ArrayList<Refeicao> pesquisarRefeicoesDeUmaDieta(long idDieta){
 
-        ArrayList<Refeicao> refeicoes = null;
+        ArrayList<Refeicao> refeicoes;
+
+        refeicoes = repositorioRefeicao.pesquisarRefeicoesDeUmaDieta(idDieta);
 
         return refeicoes;
     }

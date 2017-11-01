@@ -28,11 +28,10 @@ public class NovaDietaFragment extends Fragment {
     private EditText eMaxSodio;
     private EditText eMaxAcucar;
     private ControleDieta controleDieta;
+    private Context context;
 
     public NovaDietaFragment() {
         // Required empty public constructor
-
-        controleDieta = new ControleDieta(getActivity());
     }
 
 
@@ -41,6 +40,8 @@ public class NovaDietaFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_nova_dieta, container, false);
+
+        controleDieta = new ControleDieta(getActivity());
 
         //Obtendo as Views
         bCriarDieta = view.findViewById(R.id.criarDieta);
@@ -74,20 +75,33 @@ public class NovaDietaFragment extends Fragment {
                 if(idDieta == -1){
                     //Não deu certo
 
-                    Toast.makeText(getActivity(), "Erro no Banco de Dados", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Erro", Toast.LENGTH_SHORT).show();
 
                 }
                 else{
                     //Deu certo, redirecionar para TelaDieta
 
+                    //Completa o objeto Dieta com seu _id
                     dieta.setId(idDieta);
 
-                    /*Intent intent = new Intent(getActivity(), DietaActivity.class);
+                    Intent intent = new Intent(getActivity(), DietaActivity.class);
                     intent.putExtra("dieta", dieta);
-                    startActivity(intent);*/
+                    startActivity(intent);
+
                 }
             }
         });
         return view;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        this.context = context;
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
     }
 }

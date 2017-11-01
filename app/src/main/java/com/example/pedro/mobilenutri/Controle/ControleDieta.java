@@ -20,9 +20,20 @@ public class ControleDieta {
         this.repositorioDieta = new RepositorioDieta(context);
     }
 
-    public Dieta pesquisarDietaPorId(int idDieta){
+    public long inserirDieta(Dieta dieta){
 
-        Dieta dieta = null;
+        long idDieta;
+
+        idDieta = repositorioDieta.inserirDieta(dieta);
+
+        return idDieta;
+    }
+
+    public Dieta pesquisarDietaPorId(long idDieta){
+
+        Dieta dieta;
+
+        dieta = repositorioDieta.pesquisarDieta(idDieta);
 
         return dieta;
     }
@@ -34,24 +45,20 @@ public class ControleDieta {
         return dieta;
     }
 
-    public long inserirDieta(Dieta dieta){
 
-        long idDieta = -1;
+    public int deletarDietaPorId(long idDieta){
 
-        idDieta = repositorioDieta.inserirDieta(dieta);
+        int count;
 
-        return idDieta;
-    }
+        count = repositorioDieta.deletarDieta(idDieta);
 
-    public boolean removerDietaPorId(int idDieta){
-
-        boolean resultadoRemocao = false;
-
-        return resultadoRemocao;
+        return count;
     }
 
     public ArrayList<Dieta> obterTodasAsDietas(){
-        ArrayList<Dieta> dietas = null;
+        ArrayList<Dieta> dietas;
+
+        dietas = repositorioDieta.obterTodasAsDietas();
 
         return dietas;
     }

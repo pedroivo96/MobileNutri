@@ -21,11 +21,24 @@ public class MobileNutriDB extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-        //sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS hoteis (_id integer primary key autoincrement, nome text, cidade text, estado text);");
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS dieta (_id integer primary key autoincrement , nome text , quantidadecalorias real , quantidadeacucar real , quantidadesodio real); ");
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS refeicao (_id integer primary key autoincrement , iddieta integer , horas integer , minutos integer , nome text);");
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS refeicaoalimento (idrefeicao integer , idalimento integer , quantidade real);");
+        
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
+
+    public void resetarBaseDeDados(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        sqLiteDatabase.delete("dieta" , null , null);
+        sqLiteDatabase.delete("refeicao" , null , null);
+        sqLiteDatabase.delete("refeicaoalimento" , null , null);
+
+        sqLiteDatabase.close();
     }
 }

@@ -47,7 +47,7 @@ public class DietasAdapter extends BaseAdapter {
         //Infla a View
         View view1 = LayoutInflater.from(context).inflate(R.layout.adapterdieta , viewGroup , false);
 
-        TextView tNomeDieta = view.findViewById(R.id.nomeDieta);
+        TextView tNomeDieta = view1.findViewById(R.id.nomeDieta);
 
         tNomeDieta.setText(dietas.get(i).getNomeDieta());
 
