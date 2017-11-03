@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.pedro.mobilenutri.Controle.ControleDieta;
 import com.example.pedro.mobilenutri.Entidade.Dieta;
@@ -26,6 +27,7 @@ public class MinhasDietasFragment extends Fragment {
     private ControleDieta controleDieta;
     private ArrayList<Dieta> dietas;
     private Context context;
+    private DietasAdapter dietasAdapter;
 
     public MinhasDietasFragment() {
         // Required empty public constructor
@@ -42,7 +44,9 @@ public class MinhasDietasFragment extends Fragment {
         dietas = controleDieta.obterTodasAsDietas();
 
         minhasDietas = view.findViewById(R.id.minhasDietas);
-        minhasDietas.setAdapter(new DietasAdapter(getActivity(),dietas));
+        dietasAdapter = new DietasAdapter(getActivity(),dietas);
+        minhasDietas.setAdapter(dietasAdapter);
+
         minhasDietas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -57,6 +61,7 @@ public class MinhasDietasFragment extends Fragment {
         });
 
         return view;
+
     }
 
     @Override
@@ -69,6 +74,31 @@ public class MinhasDietasFragment extends Fragment {
 
     public void onDetach() {
         super.onDetach();
+    }
+
+    /*@Override
+    public void onStart() {
+
+        Toast.makeText(context, "Chamou onStart", Toast.LENGTH_SHORT).show();
+
+        super.onStart();
+        dietas = controleDieta.obterTodasAsDietas();
+
+        dietasAdapter = new DietasAdapter(getActivity(),dietas);
+        minhasDietas.setAdapter(dietasAdapter);
+
+    }*/
+
+    @Override
+    public void onResume() {
+
+        Toast.makeText(context, "Chamou onResume", Toast.LENGTH_SHORT).show();
+
+        super.onResume();
+        dietas = controleDieta.obterTodasAsDietas();
+
+        dietasAdapter = new DietasAdapter(getActivity(),dietas);
+        minhasDietas.setAdapter(dietasAdapter);
     }
 
 }

@@ -74,4 +74,12 @@ public class RefeicoesActivity extends AppCompatActivity {
     public Context getContext(){
         return this;
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getContext() , DietaActivity.class);
+        intent.putExtra("dieta", dieta);
+        startActivity(intent);
+        finish();
+    }
 }

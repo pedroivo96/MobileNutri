@@ -88,6 +88,8 @@ public class NovaDietaFragment extends Fragment {
                     intent.putExtra("dieta", dieta);
                     startActivity(intent);
 
+
+
                 }
             }
         });

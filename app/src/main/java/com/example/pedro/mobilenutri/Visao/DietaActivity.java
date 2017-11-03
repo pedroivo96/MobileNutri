@@ -56,4 +56,9 @@ public class DietaActivity extends AppCompatActivity {
     public Context getContext(){
         return this;
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }
