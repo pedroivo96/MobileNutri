@@ -17,10 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Visao.MenuActivity" />
-        <activity android:name=".Visao.DietaActivity" />
-        <activity android:name=".Visao.RefeicoesActivity" />
-        <activity android:name=".Visao.AdicionarRefeicaoActivity" />
-        <activity android:name=".Visao.RefeicaoActivity"></activity>
+        <activity android:name=".Visao.AlimentoActivity" />
+        <activity android:name=".Visao.ResultadosPesquisaAlimentosActivity" />
+        <activity android:name=".Visao.CarregamentoActivity" />
+        <activity android:name=".Visao.PesquisaAlimentoActivity"></activity>
     </application>
 
 </manifest>

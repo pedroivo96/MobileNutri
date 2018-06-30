@@ -1,21 +1,25 @@
 package com.example.pedro.mobilenutri.Visao;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.pedro.mobilenutri.R;
 import com.example.pedro.mobilenutri.Repositorio.MobileNutriDB;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private ViewPager viewPager;
     private MobileNutriDB mobileNutriDB;
+    private Button bPesquisarAlimento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,37 +28,17 @@ public class MenuActivity extends AppCompatActivity {
 
         mobileNutriDB = new MobileNutriDB(this);
 
-        //Configura o ViewPager
-        viewPager = (ViewPager) findViewById(R.id.vPager);
-        viewPager.setAdapter(new TabsAdapter(getSupportFragmentManager()));
+        bPesquisarAlimento = (Button) findViewById(R.id.bPesquisaAlimento);
 
-        //Configura as Tabs
-        final ActionBar actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-        //Adiciona as Tabs no ActionBar
-        actionBar.addTab(actionBar.newTab().setText("Nova Dieta").setTabListener(new MyTabListener(viewPager,0)));
-        actionBar.addTab(actionBar.newTab().setText("Minhas Dietas").setTabListener(new MyTabListener(viewPager,1)));
-        actionBar.addTab(actionBar.newTab().setText("Pesquisar Alimento").setTabListener(new MyTabListener(viewPager,2)));
-
-        //Configura a Tab baseada na ViewPager
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        bPesquisarAlimento.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-                actionBar.setSelectedNavigationItem(position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), PesquisaAlimentoActivity.class);
+                startActivity(intent);
             }
         });
+
+
     }
 
     @Override
@@ -87,5 +71,9 @@ public class MenuActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private Context getContext(){
+        return this;
     }
 }

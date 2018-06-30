@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.pedro.mobilenutri.Entidade.Alimento;
-import com.example.pedro.mobilenutri.Entidade.Refeicao;
 import com.example.pedro.mobilenutri.R;
 
 import java.util.ArrayList;
