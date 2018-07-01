@@ -16,4 +16,16 @@
         android:id="@+id/bPesquisaAlimento"
         android:text="Pesquisar Alimento"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bListarAlimentos"
+        android:text="Listar Alimentos"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bSobre"
+        android:text="Sobre"/>
+
 </LinearLayout>

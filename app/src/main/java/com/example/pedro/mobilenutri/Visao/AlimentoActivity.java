@@ -88,45 +88,45 @@ public class AlimentoActivity extends AppCompatActivity {
         //Exibindo os dados do Alimento nos TextViews formatado para 2 casas decimais
         tNomeAlimento.setText(alimento.getNomeAlimento());
         tTipoAlimento.setText("Tipo : "+alimento.getTipoAlimento());
-        tUmidade.setText("Umidade : "+formatarString(alimento.getUmidade())+" %");
-        tEnergiaKcal.setText("Energia : "+formatarString(alimento.getEnergiaKcal())+" kCal");
-        tEnergiaKj.setText("Energia :"+formatarString(alimento.getEnergiaKJoule())+" kJ");
-        tProteina.setText("Proteína : "+formatarString(alimento.getProteina())+" g");
-        tLipideos.setText("Lípideos : "+formatarString(alimento.getLipideos())+" g");
-        tColesterol.setText("Colesterol : "+formatarString(alimento.getColesterol())+" mg");
-        tCarboidrato.setText("Carboidrato : "+formatarString(alimento.getCarboidrato())+" g");
-        tFibraAlimentar.setText("Fibra Alimentar : "+formatarString(alimento.getFibraAlimentar())+" g");
-        tCinzas.setText("Cinzas : "+formatarString(alimento.getCinzas())+" g");
-        tCalcio.setText("Cálcio : "+formatarString(alimento.getCalcio())+" mg");
-        tMagnesio.setText("Magnésio : "+formatarString(alimento.getMagnesio())+" mg");
-        tManganes.setText("Manganês : "+formatarString(alimento.getManganes())+" mg");
-        tFosforo.setText("Fósforo : "+formatarString(alimento.getFosforo())+" mg");
-        tFerro.setText("Ferro : "+formatarString(alimento.getFerro())+" mg");
-        tSodio.setText("Sódio : "+formatarString(alimento.getSodio())+" mg");
-        tPotassio.setText("Potássio : "+formatarString(alimento.getPotassio())+" mg");
-        tCobre.setText("Cobre : "+formatarString(alimento.getCobre())+" mg");
-        tZinco.setText("Zinco : "+formatarString(alimento.getZinco())+" mg");
-        tRetinol.setText("Retinol : "+formatarString(alimento.getRetinol())+" mcg");
-        tRE.setText("RE : "+formatarString(alimento.getRe())+" mcg");
-        tRAE.setText("RAE : "+formatarString(alimento.getRae())+" mcg");
-        tTiamina.setText("Tiamina : "+formatarString(alimento.getTiamina())+" mg");
-        tRiboflavina.setText("Riboflavina : "+formatarString(alimento.getRiboflavina())+" mg");
-        tPiridoxina.setText("Piridoxina : "+formatarString(alimento.getPiridoxina())+" mg");
-        tNiacina.setText("Niacina : "+formatarString(alimento.getNiacina())+" mg");
-        tVitaminaC.setText("Vitamina C : "+formatarString(alimento.getVitaminaC())+" mg");
+        tUmidade.setText("Umidade : "+formatarString(alimento.getUmidade(), "%"));
+        tEnergiaKcal.setText("Energia : "+formatarString(alimento.getEnergiaKcal(), " kCal"));
+        tEnergiaKj.setText("Energia :"+formatarString(alimento.getEnergiaKJoule(), " kJ"));
+        tProteina.setText("Proteína : "+formatarString(alimento.getProteina(), " g"));
+        tLipideos.setText("Lípideos : "+formatarString(alimento.getLipideos(), " g"));
+        tColesterol.setText("Colesterol : "+formatarString(alimento.getColesterol(), " mg"));
+        tCarboidrato.setText("Carboidrato : "+formatarString(alimento.getCarboidrato(), " g"));
+        tFibraAlimentar.setText("Fibra Alimentar : "+formatarString(alimento.getFibraAlimentar(), " g"));
+        tCinzas.setText("Cinzas : "+formatarString(alimento.getCinzas(), " g"));
+        tCalcio.setText("Cálcio : "+formatarString(alimento.getCalcio(), " mg"));
+        tMagnesio.setText("Magnésio : "+formatarString(alimento.getMagnesio(), " mg"));
+        tManganes.setText("Manganês : "+formatarString(alimento.getManganes(), " mg"));
+        tFosforo.setText("Fósforo : "+formatarString(alimento.getFosforo(), " mg"));
+        tFerro.setText("Ferro : "+formatarString(alimento.getFerro(), " mg"));
+        tSodio.setText("Sódio : "+formatarString(alimento.getSodio(), " mg"));
+        tPotassio.setText("Potássio : "+formatarString(alimento.getPotassio(), " mg"));
+        tCobre.setText("Cobre : "+formatarString(alimento.getCobre(), " mg"));
+        tZinco.setText("Zinco : "+formatarString(alimento.getZinco(), " mg"));
+        tRetinol.setText("Retinol : "+formatarString(alimento.getRetinol(), " mcg"));
+        tRE.setText("RE : "+formatarString(alimento.getRe(), " mcg"));
+        tRAE.setText("RAE : "+formatarString(alimento.getRae(), " mcg"));
+        tTiamina.setText("Tiamina : "+formatarString(alimento.getTiamina(), " mg"));
+        tRiboflavina.setText("Riboflavina : "+formatarString(alimento.getRiboflavina(), " mg"));
+        tPiridoxina.setText("Piridoxina : "+formatarString(alimento.getPiridoxina(), " mg"));
+        tNiacina.setText("Niacina : "+formatarString(alimento.getNiacina(), " mg"));
+        tVitaminaC.setText("Vitamina C : "+formatarString(alimento.getVitaminaC(), " mg"));
 
     }
 
     /*Recebe uma String e a formata para duas casas decimais caso seu conteúdo corresponda a um
     * Float ou a retorna como foi recebida, caso contrário */
-    private String formatarString(String s){
+    private String formatarString(String dado, String medida){
 
         try{
-            float f = Float.parseFloat(s);
+            float f = Float.parseFloat(dado);
 
-            return String.format(java.util.Locale.US,"%.2f", f);
+            return String.format(java.util.Locale.US,"%.2f", f) + medida;
         }catch (NumberFormatException e){
-            return s;
+            return dado;
         }
     }
 }

@@ -20,6 +20,8 @@ public class MenuActivity extends AppCompatActivity {
 
     private MobileNutriDB mobileNutriDB;
     private Button bPesquisarAlimento;
+    private Button bListarAlimentos;
+    private Button bSobre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,6 @@ public class MenuActivity extends AppCompatActivity {
         mobileNutriDB = new MobileNutriDB(this);
 
         bPesquisarAlimento = (Button) findViewById(R.id.bPesquisaAlimento);
-
         bPesquisarAlimento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,6 +39,24 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+
+        bListarAlimentos = (Button) findViewById(R.id.bListarAlimentos);
+        bListarAlimentos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ListarAlimentosActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        bSobre = (Button) findViewById(R.id.bSobre);
+        bSobre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), SobreActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

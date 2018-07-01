@@ -20,7 +20,9 @@
         <activity android:name=".Visao.AlimentoActivity" />
         <activity android:name=".Visao.ResultadosPesquisaAlimentosActivity" />
         <activity android:name=".Visao.CarregamentoActivity" />
-        <activity android:name=".Visao.PesquisaAlimentoActivity"></activity>
+        <activity android:name=".Visao.PesquisaAlimentoActivity" />
+        <activity android:name=".Visao.ListarAlimentosActivity" />
+        <activity android:name=".Visao.SobreActivity"></activity>
     </application>
 
 </manifest>
